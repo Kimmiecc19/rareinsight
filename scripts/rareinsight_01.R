@@ -7,6 +7,7 @@ if (!require("vcfR")) install.packages("vcfR")
 if (!require("DT")) install.packages("DT")
 if (!require("rmarkdown")) install.packages("rmarkdown")
 if (!require("shinyjs")) install.packages("shinyjs")
+if (!require("httr")) install.packages("httr")
 
 #Load packages
 library(shiny)
@@ -17,6 +18,7 @@ library(vcfR)
 library(DT)  # For interactive tables
 library(rmarkdown)
 library(shinyjs)
+library(httr)
 
 options(shiny.maxRequestSize = 60 * 1024^2)
 
@@ -109,7 +111,7 @@ ui <- fluidPage(
                 ),
                 fluidRow(
                   column(width = 12,
-                         tags$video(src = "Capture vidéo du 15 أفريل, 2024 CET 11:24:10 ص.webm", 
+                         tags$video(src = "https://github.com/omicscodeathon/rareinsight/blob/main/www/RareInsight_tutorial.mp4", 
                                     type = "video/mp4", 
                                     width = "100%", 
                                     controls = TRUE)
@@ -279,7 +281,7 @@ ui <- fluidPage(
             tabPanel(
               "Disorder Information",
               h2("Disorder Information"),
-              p("THere is some information on the selected disorder, accession or gene from the Clinvar search panel."),
+              p("Here is some information on the selected disorder, accession or gene from the Clinvar search panel."),
               fluidRow(
                 column( width = 12,
                   actionButton("buttonOMIM", label = "OMIM", icon = icon("up-right-from-square")),
